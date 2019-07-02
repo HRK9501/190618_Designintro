@@ -1,24 +1,82 @@
-/* start at mobile size, and work up from there*/
+/* start at mobile size, and work up from there */
+main {
+	width: 95%;
+	margin: 0 auto;
+}
+
+main > div {display: inline-block;}
+
+/* mobile first => write the rules that will apply at handheld first */
 
 .box1 {
-    width: 300px;
-    height: 300px;
-    background-color: blue;
+	width: 100%;
+	height: 300px;
+	background-color: blue;
+	display: block;
 }
 
 .box2 {
-    width: 300px;
-    height: 300px;
-    background-color: red;
+	width: 100%;
+	height: 300px;
+	background-color: red;
+	display: block;
+}
+
+.description {
+	display: none;
+}
+
+.image-container {
+	width: 100%;
+	display: inline-block;
+}
+
+img, video, object embed {
+	max-width: 100%
 }
 
 /* this is a basic media query */
 
 /* change the layout when we're viewing the app on a phone */
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px){
-    .box1 {
-        background-color:goldenrod;
-        border: black;
-    }
+@media screen and (max-width:376px){
+	.box1{
+		background-color: yellow;
+		display: inline-block;
+		width: 48%;
+	}
+
+	.box2{
+		background-color: orange;
+		display: inline-block;
+		width: 48%;
+	}
+
+	.image-container {
+		width:100%;
+		display: inline-block;
+	}
+}
+
+/* media query for tablet @ portarit*/
+
+@media screen and (min-width:768px) {
+	.box1 {
+		background-color: green;
+		display: inline-block;
+		width:65%;
+	}
+
+	.box2 {
+		display: none;
+	}
+
+	.description {
+		display: block;
+	}
+
+	.image-container {
+		width:30%;
+		display: inline-block;
+	}
 }
